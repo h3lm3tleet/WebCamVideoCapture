@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="Menu_File">File</v:String>
+    <v:String x:Key="Menu_Close">Close</v:String>
+    
+    <v:String x:Key="YourCamera">Your Camera is</v:String>
+    <v:String x:Key="AvailableOperations:">AvailableOperations</v:String>
+    <v:String x:Key="Flip180Oper">Flip 180 degrees</v:String>
+    <v:String x:Key="MirrorOper">Mirror</v:String>
+    <v:String x:Key="ZoomInOper">Zoom In</v:String>
+    <v:String x:Key="ZoomOutOper">Zoom Out</v:String>
+    <v:String x:Key="ResetPositionOper">Reset Position</v:String>
+    <v:String x:Key="GrayModeOper">Gray Mode</v:String>
+    <v:String x:Key="NegativeModeOper">Negative Mode</v:String>
+    <v:String x:Key="GrayHistogramMode">Gray Histogram</v:String>
+</ResourceDictionary>

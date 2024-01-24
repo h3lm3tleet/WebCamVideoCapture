@@ -1,0 +1,65 @@
+﻿<Window x:Class="WebCamVideoCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Closed="Window_Closed"
+        Topmost="True"
+        Title="WebCam" Height="400" Width="700">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel>
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="{StaticResource Menu_File}">
+                        <MenuItem Header="{StaticResource Menu_Close}" Click="ExitApplication_Click"/>
+                    </MenuItem>        
+                </Menu>
+            </DockPanel>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Your Camera is" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontSize="20"/>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <ComboBox Name="ComboBoxWebcams"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          FontSize="20"
+                          SelectionChanged="ComboBoxWebcams_SelectionChanged"/>
+            </Grid>
+
+            <Border BorderThickness="10" BorderBrush="Coral" Grid.Column="1" Grid.Row="1" Margin="5" >
+                <Grid Grid.Row="1" Grid.Column="1" ClipToBounds="True">
+                    <Image Name="ImageWebcamFrame" Stretch="Uniform" MaxHeight="300" MaxWidth="400" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           MouseDown="ImageWebcamFrame_MouseDown" 
+                           MouseMove="ImageWebcamFrame_MouseMove" 
+                           MouseUp="ImageWebcamFrame_MouseUp"/>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Text="{StaticResource AvailableOperations:}" Margin="5"/>
+                <Button Content="{StaticResource Flip180Oper}" Name="WebCameraFlipperButton" Click="WebCameraFlipperButton_Click" Margin="5"/>
+                <Button Content="{StaticResource MirrorOper}" Name="WebCameraMirrorButton" Click="WebCameraMirrorButton_Click" Margin="5"/>
+                <Button Content="{StaticResource ZoomInOper}" Name="WebCameraZoomIn" Click="WebCameraZoomIn_Click"  Margin="5"/>
+                <Button Content="{StaticResource ZoomOutOper}" Name="WebCameraZoomOut" Click="WebCameraZoomOut_Click"  Margin="5"/>
+                <Button Content="{StaticResource ResetPositionOper}" Name="WebCameraResetPosition" Click="WebCameraResetPosition_Click"  Margin="5"/>
+                <Button Content="{StaticResource GrayModeOper}" Name="WebCameraGrayMode" Click="WebCameraGrayMode_Click" Margin="5"/>
+                <Button Content="{StaticResource NegativeModeOper}" Name="WebCameraNegativeMode" Click="WebCameraNegativeMode_Click"  Margin="5"/>
+                <Button Content="{StaticResource GrayHistogramMode}" Name="WebCameraGrayHistogram" Click="WebCameraGrayHistogram_Click"  Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
