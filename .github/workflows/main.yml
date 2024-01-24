@@ -1,0 +1,33 @@
+name: Build Release
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build release
+      run: dotnet publish -c Release -o out
+
+    - name: Upload release
+      uses: actions/upload-artifact@v2
+      with:
+        name: release
+        path: out/
