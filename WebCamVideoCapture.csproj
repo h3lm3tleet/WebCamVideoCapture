@@ -28,4 +28,9 @@
     <PackageReference Include="System.Drawing.Common" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="WebCamVideoCapture.Tests\" />
+    <Folder Include="WebCamVideoCapture.Package\" />
+  </ItemGroup>
+
 </Project>
